@@ -21,13 +21,3 @@
     <%= f.submit %>
   </div>
 <% end %>
-
-<div class="field">
-  <%= f.label "Favorite?" %><br />
-  <%= f.collection_check_boxes :favorite_ids, Favorite.all, :id, :name do |b| %>
-    <div class="collection-check-box">
-      <%= b.check_box %>
-      <%= b.label %>
-    </div>
-  <% end %>
-</div>
