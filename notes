@@ -1,6 +1,8 @@
 PLAN OF ATTACK
 like avi said "get it working and build on features"
-set up bookmarks
+
+1. set up bookmarks, favorites - get them working
+2. add requirementsrail
 
 bookmarks needs:
   controller - setup by scaffolding (needs strong params)
