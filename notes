@@ -1,3 +1,10 @@
+cernan 3/21 meeting
+^rails g scaffold favorites list:string
+rails g migration CreateJoinTableFavoritesBookmarks favorite bookmarks
+add associations to favorite and user models
+in index.html.erb use :list to save to db?
+use ransack gem to make bookmarks searchable?
+
 PLAN OF ATTACK
 like avi said "get it working and build on features"
 
