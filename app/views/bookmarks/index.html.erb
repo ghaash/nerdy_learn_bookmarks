@@ -15,15 +15,17 @@
         <td><%= bookmark.name %></td>
         <td><%= bookmark.description %></td>
         <td><%= bookmark.url %></td>
+        <td><%= check_box_tag(:name) %></td>
+        <td><%= label_tag(:name, "favorite!") %></td>
         <td><%= link_to 'Show', bookmark %></td>
         <td><%= link_to 'Edit', edit_bookmark_path(bookmark) %></td>
-        <td><%= link_to 'Destroy', bookmark, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Delete', bookmark, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
-
   </tbody>
 </table>
-
 <br>
+
+
 
 <%= link_to 'New Bookmark', new_bookmark_path %>
