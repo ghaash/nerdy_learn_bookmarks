@@ -24,7 +24,6 @@ class FavoritesController < ApplicationController
   # POST /favorites
   # POST /favorites.json
   def create
-    binding.pry
     @favorite = Favorite.new(favorite_params)
 
     respond_to do |format|
@@ -60,6 +59,11 @@ class FavoritesController < ApplicationController
       format.html { redirect_to favorites_url, notice: 'Favorite was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def add_to_favorites
+    favorite = Favorite.find(params[:bookmark_id])
+  	favorites << favorite
   end
 
   private

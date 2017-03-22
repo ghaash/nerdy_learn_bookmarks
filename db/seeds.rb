@@ -20,3 +20,8 @@ bookmarks = [{name: "CodeFights", description: "a website to for one-on-one comp
 bookmarks.each do |bookmark|
   Bookmark.create(bookmark)
 end
+
+favorites = [{name: "CodeFights", description: "a website to for one-on-one competitive programming", url: "https://codefights.com/"}]
+favorites.each do |favorite|
+  Favorite.create(favorite)
+end

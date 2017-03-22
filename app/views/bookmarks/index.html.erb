@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Bookmarks</h1>
+<h1>Nerdy Learn Bookmarks</h1>
 
 <table>
   <thead>
@@ -14,22 +14,26 @@
       <tr>
         <td><%= bookmark.name %></td>
         <td><%= bookmark.description %></td>
-        <td><%= bookmark.url %></td>
+        <td><%= link_to bookmark.url %></td>
         <td>
-          <%= form_tag('/favorites') do %>
+          <%= form_tag('/add_to_favorites') do %>
           <%= hidden_field_tag "bookmark_id", bookmark.id %>
-          <%= submit_tag 'Make Favorite' %>
+          <%= submit_tag 'Add To Favorites' %>
           <% end %>
         </td>
-        <td><%= link_to 'Show', bookmark %></td>
+        <!-- <td><%= link_to 'Show', bookmark %></td>
         <td><%= link_to 'Edit', edit_bookmark_path(bookmark) %></td>
-        <td><%= link_to 'Delete', bookmark, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Delete', bookmark, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
       </tr>
     <% end %>
   </tbody>
 </table>
 <br>
 
-
-
 <%= link_to 'New Bookmark', new_bookmark_path %>
+
+<%= search_form_for @q do |f| %>
+<%= f.label :name_cont %>
+<%= f.search_field :name_cont %>
+<%= f.submit %>
+<% end %>
