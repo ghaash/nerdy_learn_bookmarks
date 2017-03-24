@@ -28,7 +28,7 @@ class FavoritesController < ApplicationController
 
     respond_to do |format|
       if @favorite.save
-        format.html { redirect_to @bookmark, notice: 'Favorite was successfully created.' }
+        format.html { redirect_to @favorite, notice: 'Favorite was successfully created.' }
         format.json { render :show, status: :created, location: @favorite }
       else
         format.html { render :new }
@@ -62,8 +62,9 @@ class FavoritesController < ApplicationController
   end
 
   def add_to_favorites
-    favorite = Favorite.find(params[:bookmark_id])
-  	favorites << favorite
+    @favorite = add_to_favorites.create(bookmark_id: params[:bookmark_id])
+     @favorite.save
+     redirect_to bookmarks_path(@bookmarks)
   end
 
   private
@@ -74,6 +75,6 @@ class FavoritesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def favorite_params
-      params.require(:favorite).permit(:bookmark_id, :list)
+      params.require(:favorite).permit(:list)
     end
 end

@@ -4,7 +4,7 @@ class BookmarksController < ApplicationController
   # GET /bookmarks
   # GET /bookmarks.json
   def index
-    @bookmarks = Bookmark.all
+    # @bookmarks = Bookmark.all
     @q = Bookmark.ransack(params[:q])
     @bookmarks = @q.result(distinct: true)
   end
@@ -63,8 +63,19 @@ class BookmarksController < ApplicationController
     end
   end
 
-  # def favorites
-  #   @favorite = favorites.build(bookmark_id: params[:bookmark_id])
+  # def add_to_favorites
+  #    @ids = []
+  #    params[:add_to_favorites].each do |key,val|
+  #       if val != "0"
+  #         @ids << key
+  #       end
+  #    end
+  #
+  #    render 'bookmarks'
+  # end
+
+  # def add_to_favorites
+  #   @favorite = favorites.create(bookmark_id: params[:bookmark_id])
   #    @favorite.save
   #    redirect_to bookmarks_path(@bookmarks)
   # end
