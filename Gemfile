@@ -33,6 +33,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'bcrypt', '~> 3.1.7'
 gem 'pry'
 gem 'ransack'
+gem 'rails_admin', '~> 1.1.1'
 
 
 # Use Capistrano for deployment

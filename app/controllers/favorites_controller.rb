@@ -62,9 +62,9 @@ class FavoritesController < ApplicationController
   end
 
   def add_to_favorites
-    @favorite = add_to_favorites.create(bookmark_id: params[:bookmark_id])
-     @favorite.save
-     redirect_to bookmarks_path(@bookmarks)
+    @favorite = Favorite.create(params[:bookmark_id])
+    @favorite.save
+    redirect_to bookmarks_path(@bookmarks)
   end
 
   private
