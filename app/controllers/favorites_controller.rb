@@ -64,7 +64,7 @@ class FavoritesController < ApplicationController
   def add_to_favorites
     @favorite = Favorite.create(params[:bookmark_id])
     @favorite.save
-    redirect_to bookmarks_path(@bookmarks)
+    redirect_to favorites_path(@favorites)
   end
 
   private
@@ -75,6 +75,6 @@ class FavoritesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def favorite_params
-      params.require(:favorite).permit(:list)
+      params.require(:favorite).permit(:list, :bookmark_id)
     end
 end

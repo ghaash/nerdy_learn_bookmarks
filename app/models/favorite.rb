@@ -14,3 +14,4 @@ end
 # turbolinks - Turbolinks makes navigating your web application faster
 # github.com
 # if its a recursion error I'm guessing your models aren't tied together correctly
+# add a join table
