@@ -17,7 +17,7 @@
         <td><%= link_to bookmark.url %></td>
         <td>
         <%= form_tag('add_to_favorites') do %>
-        <%= hidden_field_tag 'add_to_favorites', bookmark.id %>
+        <%= hidden_field_tag 'add_to_favorites', bookmark.name %>
         <td><%= submit_tag 'Add To Favorites' %></td>
         <% end %>
         </td>

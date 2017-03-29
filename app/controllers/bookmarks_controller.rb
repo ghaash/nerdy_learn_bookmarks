@@ -74,11 +74,11 @@ class BookmarksController < ApplicationController
   #    render 'bookmarks'
   # end
 
-  # def add_to_favorites
-  #   @favorite = favorites.create(bookmark_id: params[:bookmark_id])
-  #    @favorite.save
-  #    redirect_to bookmarks_path(@bookmarks)
-  # end
+  def add_to_favorites
+    @favorite = Favorite.create(params[:id])
+    @favorite.save
+    redirect_to favorites_path(@favorites)
+  end
 
   private
     # Use callbacks to share common setup or constraints between actions.
