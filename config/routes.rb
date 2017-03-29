@@ -6,3 +6,4 @@ Rails.application.routes.draw do
   # post '/favorites', to: 'bookmarks#favorites'
   post '/add_to_favorites' => 'favorites#add_to_favorites'
 end
+  
