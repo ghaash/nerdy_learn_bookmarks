@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+gem 'dotenv-rails', require: 'dotenv/rails-now'
+
 git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
   "https://github.com/#{repo_name}.git"
@@ -34,7 +36,9 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'pry'
 gem 'ransack'
 gem 'rails_admin', '~> 1.1.1'
-gem 'omniauth'
+gem 'devise'
+gem 'dotenv'
+# gem 'omniauth'
 gem 'omniauth-facebook'
 
 # Use Capistrano for deployment
