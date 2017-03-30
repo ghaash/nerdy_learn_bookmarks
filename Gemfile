@@ -38,8 +38,8 @@ gem 'ransack'
 gem 'rails_admin', '~> 1.1.1'
 gem 'devise'
 gem 'dotenv'
-# gem 'omniauth'
 gem 'omniauth-facebook'
+gem 'rubocop', require: false
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
