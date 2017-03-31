@@ -25,7 +25,7 @@ class FavoritesController < ApplicationController
   # POST /favorites.json
   def create
     @favorite = Favorite.new(favorite_params)
-
+binding.pry
     respond_to do |format|
       if @favorite.save
         format.html { redirect_to @favorite, notice: 'Favorite was successfully created.' }
@@ -68,13 +68,13 @@ class FavoritesController < ApplicationController
   # end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_favorite
-      @favorite = Favorite.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_favorite
+    @favorite = Favorite.find(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def favorite_params
-      params.require(:favorite).permit(:list, :bookmark_id)
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def favorite_params
+    params.require(:favorite).permit(:user_id, :bookmark_id)
+  end
 end

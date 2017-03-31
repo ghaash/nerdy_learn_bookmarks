@@ -76,8 +76,11 @@ class BookmarksController < ApplicationController
   # end
 
   def add_to_favorites
-    @favorite = Favorite.create(params[:id])
-    @favorite.save
+    @favorite = Favorite.create({
+      user: current_user,
+      bookmark: Bookmark.find(params[:id])
+    })
+    # @favorite.save
     redirect_to favorites_path(@favorites)
   end
 
