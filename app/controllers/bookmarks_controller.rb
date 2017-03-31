@@ -64,37 +64,14 @@ class BookmarksController < ApplicationController
     end
   end
 
-  # def add_to_favorites
-  #    @ids = []
-  #    params[:add_to_favorites].each do |key,val|
-  #       if val != "0"
-  #         @ids << key
-  #       end
-  #    end
-  #
-  #    render 'bookmarks'
-  # end
-
-  def add_to_favorites
-    @favorite = Favorite.create({
-      user: current_user,
-      bookmark: Bookmark.find(params[:id])
-    })
-    # @favorite.save
-    redirect_to favorites_path(@favorites)
+  private
+  # Use callbacks to share common setup or constraints between actions.
+  def set_bookmark
+    @bookmark = Bookmark.find(params[:id])
   end
 
-  private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_bookmark
-      @bookmark = Bookmark.find(params[:id])
-    end
-
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def bookmark_params
-      params.require(:bookmark).permit(:name, :description, :url)
-    end
-    # def bookmark_params
-    #   params.fetch(:bookmark, {})
-    # end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def bookmark_params
+    params.require(:bookmark).permit(:name, :description, :url)
+  end
 end

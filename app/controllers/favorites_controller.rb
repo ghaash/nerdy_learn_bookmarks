@@ -25,7 +25,7 @@ class FavoritesController < ApplicationController
   # POST /favorites.json
   def create
     @favorite = Favorite.new(favorite_params)
-binding.pry
+
     respond_to do |format|
       if @favorite.save
         format.html { redirect_to @favorite, notice: 'Favorite was successfully created.' }
@@ -61,11 +61,6 @@ binding.pry
     end
   end
 
-  # def add_to_favorites
-  #   @favorite = Favorite.create(params[:name, :description, :url])
-  #   @favorite.save
-  #   redirect_to favorites_path(@favorites)
-  # end
 
   private
   # Use callbacks to share common setup or constraints between actions.
