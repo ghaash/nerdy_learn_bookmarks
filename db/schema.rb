@@ -20,13 +20,6 @@ ActiveRecord::Schema.define(version: 20170331163217) do
     t.datetime "updated_at",  null: false
   end
 
-  create_table "bookmarks_favorites", id: false, force: :cascade do |t|
-    t.integer "bookmark_id", null: false
-    t.integer "favorite_id", null: false
-    t.index ["bookmark_id", "favorite_id"], name: "index_bookmarks_favorites_on_bookmark_id_and_favorite_id"
-    t.index ["favorite_id", "bookmark_id"], name: "index_bookmarks_favorites_on_favorite_id_and_bookmark_id"
-  end
-
   create_table "favorites", force: :cascade do |t|
     t.string   "name"
     t.string   "description"

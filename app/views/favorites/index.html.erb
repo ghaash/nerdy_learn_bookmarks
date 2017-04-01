@@ -29,3 +29,9 @@
 
 <%= link_to 'New Favorite', new_favorite_path %>
 <%= link_to 'bookmarks', bookmarks_path %>
+
+<%= search_form_for @q do |f| %>
+<%= f.label :name_cont %>
+<%= f.search_field :name_cont %>
+<%= f.submit %>
+<% end %>

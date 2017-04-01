@@ -15,13 +15,7 @@
         <td><%= bookmark.name %></td>
         <td><%= bookmark.description %></td>
         <td><%= link_to bookmark.url %></td>
-        <td>
-        <!-- <%= form_tag('bookmarks') do %>
-        <%= hidden_field_tag('bookmark_ids[]', bookmark.id) %>
-        <%= collection_check_boxes(:favorite, :bookmark_ids, Bookmark.all, :id, :favorites) %>
-        <%= submit_tag 'Add To Favorites' %></td> -->
         <td><%= button_to 'Add To Favorites', favorites_path(favorite: {user_id: current_user, bookmark_id: bookmark}) %></td>
-        <% end %>
         </td>
         <!-- <td><%= link_to 'Show', bookmark %></td>
         <td><%= link_to 'Edit', edit_bookmark_path(bookmark) %></td>
