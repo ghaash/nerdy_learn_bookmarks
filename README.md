@@ -1,24 +1,13 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Instructions!
 
-Things you may want to cover:
+Fork or clone this app from github.com/ghaash/nerdy_learn_bookmarks
 
-* Ruby version
+Run bundle install
 
-* System dependencies
+Rake db:seed to load the included bookmarks
 
-* Configuration
+You'll be taken to the bookmarks page in which bookmarks are listed by name, description and url. Click on the url to visit the site.
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+At the bottom of the page there is search functionality and you can search for keywords such as: 'ruby'
