@@ -21,7 +21,7 @@ bookmarks needs:
 application needs
 controller - set up with helpers and logged in adsfdfas
 model - blank
-views - none
+views - none 
 
 user needs
 controller - CRUD with params/devise

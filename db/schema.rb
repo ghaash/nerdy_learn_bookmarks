@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170330035607) do
+ActiveRecord::Schema.define(version: 20170331163217) do
 
   create_table "bookmarks", force: :cascade do |t|
     t.string   "name"
@@ -31,8 +31,10 @@ ActiveRecord::Schema.define(version: 20170330035607) do
     t.string   "name"
     t.string   "description"
     t.string   "url"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+    t.integer  "bookmark_id", default: 1, null: false
+    t.integer  "user_id",     default: 1, null: false
   end
 
   create_table "users", force: :cascade do |t|

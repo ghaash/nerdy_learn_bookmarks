@@ -5,7 +5,7 @@ class BookmarksController < ApplicationController
   # GET /bookmarks
   # GET /bookmarks.json
   def index
-    # @bookmarks = Bookmark.all
+    @bookmarks = Bookmark.all
     @q = Bookmark.ransack(params[:q])
     @bookmarks = @q.result(distinct: true)
   end
@@ -76,10 +76,13 @@ class BookmarksController < ApplicationController
   # end
 
   def add_to_favorites
-    @favorite = Favorite.create(params[:id])
-    @favorite.save
-    redirect_to favorites_path(@favorites)
-  end
+    @favorite = Favorite.create({
+      user: current_user,
+      bookmark: Bookmark.find(params[:id])
+    })
+   # @favorite.save
+     redirect_to favorites_path(@favorites)
+   end
 
   private
     # Use callbacks to share common setup or constraints between actions.

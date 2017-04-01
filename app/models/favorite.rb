@@ -1,5 +1,19 @@
 class Favorite < ApplicationRecord
-  has_many :bookmarks
+  belongs_to :bookmark
+  belongs_to :user
+
+  def name
+    bookmark.name
+  end
+
+  def description
+    bookmark.description
+  end
+
+  def url
+    bookmark.url
+  end
+  #has_many :bookmarks
   # def add_to_favorites
   #   @favorite = add_to_favorites.create(bookmark_id: params[:bookmark_id])
   #   @favorite.save

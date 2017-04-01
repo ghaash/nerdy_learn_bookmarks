@@ -24,6 +24,7 @@ class FavoritesController < ApplicationController
   # POST /favorites
   # POST /favorites.json
   def create
+    # binding.pry
     @favorite = Favorite.new(favorite_params)
 
     respond_to do |format|
@@ -75,6 +76,6 @@ class FavoritesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def favorite_params
-      params.require(:favorite).permit(:list, :bookmark_id)
+      params.require(:favorite).permit(:user_id, :bookmark_id)
     end
 end
