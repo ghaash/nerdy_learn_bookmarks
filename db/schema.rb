@@ -10,7 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170331163217) do
+ActiveRecord::Schema.define(version: 20170402042717) do
+
+  create_table "Bookmarks_Favorites", id: false, force: :cascade do |t|
+    t.integer "bookmark_id", null: false
+    t.integer "favorite_id", null: false
+    t.index ["bookmark_id", "favorite_id"], name: "index_Bookmarks_Favorites_on_bookmark_id_and_favorite_id"
+    t.index ["favorite_id", "bookmark_id"], name: "index_Bookmarks_Favorites_on_favorite_id_and_bookmark_id"
+  end
 
   create_table "bookmarks", force: :cascade do |t|
     t.string   "name"

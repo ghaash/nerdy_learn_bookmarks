@@ -20,4 +20,9 @@
     <%= f.text_field :url %>
     <%= f.submit %>
   </div>
+
+  <%= f.fields_for :description do |desc| %>
+      <%= desc.label :type %>
+      <%= desc.text_field :type %><br>
+<% end %>
 <% end %>

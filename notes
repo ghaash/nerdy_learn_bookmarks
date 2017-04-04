@@ -21,7 +21,7 @@ bookmarks needs:
 application needs
 controller - set up with helpers and logged in adsfdfas
 model - blank
-views - none 
+views - none
 
 user needs
 controller - CRUD with params/devise
@@ -92,3 +92,13 @@ rails does this automatically here: https://learn.co/tracks/full-stack-web-dev-w
 //scaffold generator
 
 10 Your application must be, within reason, a DRY (Do-Not-Repeat-Yourself) rails app. Logic present in your controllers should be encapsulated as methods in your models. Your views should use helper methods and partials to be as logic-less as possible. Follow patterns in the Rails Style Guide and the Ruby Style Guide.
+
+
+<!-- example of a nested form in which we can add 'type' to form
+<%= f.fields_for :description do |desc| %>
+    <%= desc.label :type %>
+    <%= desc.text_field :type %><br>  -->
+
+    <!-- <td><%= link_to 'Show', bookmark %></td>
+    <td><%= link_to 'Edit', edit_bookmark_path(bookmark) %></td>
+    <td><%= link_to 'Delete', bookmark, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
