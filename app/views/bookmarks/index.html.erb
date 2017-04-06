@@ -1,6 +1,11 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Nerdy Learn Bookmarks</h1>
+<%= form_tag("/favorite", method: "get") do %>
+  <%= select_tag "bookmarks", options_from_collection_for_select(@bookmarks, "id", "name"), include_blank: true %>
+  <%= select_tag "date", options_for_select(["Today", "Old News"]), include_blank: true %>
+  <%= submit_tag "Filter" %>
+<% end %>
 
 <table>
   <thead>
