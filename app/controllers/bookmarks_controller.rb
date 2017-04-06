@@ -6,17 +6,7 @@ class BookmarksController < ApplicationController
     @bookmarks = Bookmark.all
     @q = Bookmark.ransack(params[:q])
     @bookmarks = @q.result(distinct: true)
-    # if !params[:bookmark].blank?
-    #   @bookmarks = Bookmark.by_bookmark(params[:bookmark])
-    # elsif !params[:date].blank?
-    #   if params[:date] == "Today"
-    #     @bookmarks = Bookmark.from_today
-    #   else
-    #     @bookmarks = Bookmark.old_news
-    #   end
-    # else
-    # @bookmarks = Bookmark.all
-    # end
+    # @bookmarks.description_attributes.build(description_type: 'type')
   end
 
   def show
@@ -64,7 +54,7 @@ class BookmarksController < ApplicationController
     end
 
     def bookmark_params
-      # params.require(:bookmark).permit(:name, :description, :url)
+      params.require(:bookmark).permit(:name, :description, :url)
       # params.require(:bookmark).permit(:name, :description, :url, description_attributes: [:type])
     end
 end
