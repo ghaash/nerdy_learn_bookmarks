@@ -4,16 +4,16 @@ class BookmarksController < ApplicationController
 
   def index
     @bookmarks = Bookmark.all
-    # @q = Bookmark.ransack(params[:q])
-    # @bookmarks = @q.result(distinct: true)
+    @q = Bookmark.ransack(params[:q])
+    @bookmarks = @q.result(distinct: true)
     if !params[:bookmark].blank?
       @bookmarks = Bookmark.by_bookmark(params[:bookmark])
-    elsif !params[:date].blank?
-      if params[:date] == "Today"
-        @bookmarks = Bookmark.from_today
-      else
-        @bookmarks = Bookmark.old_news
-      end
+    # elsif !params[:date].blank?
+    #   if params[:date] == "Today"
+    #     @bookmarks = Bookmark.from_today
+    #   else
+    #     @bookmarks = Bookmark.old_news
+    #   end
     else
     @bookmarks = Bookmark.all
     end

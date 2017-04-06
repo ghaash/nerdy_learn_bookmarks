@@ -4,8 +4,7 @@
 
 <h3>Filter bookmarks:</h3>
  <%= form_tag("/bookmarks", method: "get") do %>
-   <%= select_tag "favorite", options_from_collection_for_select(@bookmarks, "id", "name"), include_blank: true %>
-   <%= select_tag "date", options_for_select(["A-Z", "Z-A"]), include_blank: true %>
+   <%= select_tag "favorite", options_from_collection_for_select(Bookmark.all, "id", "name"), include_blank: true %>
    <%= submit_tag "Filter" %>
  <% end %>
 
