@@ -5,13 +5,13 @@ Rails.application.routes.draw do
 
   root to: "bookmarks#index"
 
-  # resources :bookmarks, only: [:index, :show, :new, :create]
-  # resources :favorites
-
-  resources :bookmarks, only: [:show, :index, :new, :create, :edit] do
-  resources :favorites, only: [:show, :index, :new, :edit, :update, :create]
-end
+  resources :bookmarks, only: [:index, :show, :new, :create]
   resources :favorites
+
+#   resources :bookmarks, only: [:show, :index, :new, :create, :edit] do
+#   resources :favorites, only: [:show, :index, :new]
+# end
+#   resources :favorites
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
