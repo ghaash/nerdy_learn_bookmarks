@@ -2,6 +2,13 @@
 
 <h1>Nerdy Learn Bookmarks</h1>
 
+<h3>Filter bookmarks:</h3>
+ <%= form_tag("/bookmarks", method: "get") do %>
+   <%= select_tag "favorite", options_from_collection_for_select(@bookmarks, "id", "name"), include_blank: true %>
+   <%= select_tag "date", options_for_select(["A-Z", "Z-A"]), include_blank: true %>
+   <%= submit_tag "Filter" %>
+ <% end %>
+
 <table>
   <thead>
     <tr>
@@ -25,9 +32,3 @@
 
 <%= link_to 'new bookmark', new_bookmark_path %>
 <%= link_to 'favorites', favorites_path %>
-
-<%= search_form_for @q do |f| %>
-<%= f.label :name_cont %>
-<%= f.search_field :name_cont %>
-<%= f.submit %>
-<% end %>

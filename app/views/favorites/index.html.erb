@@ -2,13 +2,6 @@
 
 <h1>Favorites</h1>
 
-<h3>Filter posts:</h3>
- <%= form_tag("/bookmarks", method: "get") do %>
-   <%= select_tag "bookmark", options_from_collection_for_select(@bookmark, "id", "name"), include_blank: true %>
-   <%= select_tag "date", options_for_select(["Today", "Old News"]), include_blank: true %>
-   <%= submit_tag "Filter" %>
- <% end %>
-
 <table>
   <thead>
     <tr>
