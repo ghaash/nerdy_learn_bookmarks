@@ -11,7 +11,7 @@
     </div>
   <% end %>
 
-  <div class="actions">
+  <div class="field">
     <%= f.label :name %>
     <%= f.text_field :name %>
     <%= f.label :description %>
@@ -24,7 +24,10 @@
         <%= t.label :created_by %>
         <%= t.text_field :created_by %>
         <% end %>
-    <%= f.submit %>
   </div>
 
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+  
 <% end %>

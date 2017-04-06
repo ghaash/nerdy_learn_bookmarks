@@ -7,20 +7,20 @@ class Bookmark < ApplicationRecord
 
 accepts_nested_attributes_for :tags
 
-  def bookmark_attributes=(bookmark)
-    self.bookmark = Bookmark.find_or_create_by(description: bookmark.description)
-    self.bookmark.update(bookmark)
-  end
-
-  def self.by_bookmark(bookmark_id)
-    where(bookmark: bookmark_id)
-  end
-
-  def self.from_today
-    where("created_at >=?", Time.zone.today.beginning_of_day)
-  end
-
-  def self.old_news
-    where("created_at <?", Time.zone.today.beginning_of_day)
-  end
+  # def bookmark_attributes=(bookmark)
+  #   self.bookmark = Bookmark.find_or_create_by(description: bookmark.description)
+  #   self.bookmark.update(bookmark)
+  # end
+  #
+  # def self.by_bookmark(bookmark_id)
+  #   where(bookmark: bookmark_id)
+  # end
+  #
+  # def self.from_today
+  #   where("created_at >=?", Time.zone.today.beginning_of_day)
+  # end
+  #
+  # def self.old_news
+  #   where("created_at <?", Time.zone.today.beginning_of_day)
+  # end
 end
