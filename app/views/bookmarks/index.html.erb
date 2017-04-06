@@ -20,6 +20,10 @@
         <td><%= bookmark.name %></td>
         <td><%= bookmark.description %></td>
         <td><%= link_to bookmark.url %></td>
+        <% bookmark.tags.each do |tag| %>
+        <td><%= tag.type %></td>
+        <% end %>
+
         <td><%= button_to 'Add To Favorites', favorites_path(favorite: {user_id: current_user, bookmark_id: bookmark}) %></td>
         </td>
       </tr>
