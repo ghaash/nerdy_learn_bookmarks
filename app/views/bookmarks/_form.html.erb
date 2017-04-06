@@ -18,9 +18,11 @@
     <%= f.text_field :description %>
     <%= f.label :url %>
     <%= f.text_field :url %>
-    <td><%= f.fields_for :tags do |t| %>
+    <%= f.fields_for :tags do |t| %>
         <%= t.label :type %>
-        <%= t.text_field :type %></td>
+        <%= t.text_field :type %>
+        <%= t.label :created_by %>
+        <%= t.text_field :created_by %>
         <% end %>
     <%= f.submit %>
   </div>
