@@ -1,11 +1,6 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Nerdy Learn Bookmarks</h1>
-<%= form_tag("/favorite", method: "get") do %>
-  <%= select_tag "bookmarks", options_from_collection_for_select(@bookmarks, "id", "name"), include_blank: true %>
-  <%= select_tag "date", options_for_select(["Today", "Old News"]), include_blank: true %>
-  <%= submit_tag "Filter" %>
-<% end %>
 
 <table>
   <thead>
@@ -20,10 +15,9 @@
         <td><%= bookmark.name %></td>
         <td><%= bookmark.description %></td>
         <td><%= link_to bookmark.url %></td>
-        <% bookmark.tags.each do |tag| %>
-        <td><%= tag.type %></td>
+        <%= f.collection_select :tag_id, Tag.all, :id, :name %>
         <% end %>
-        <td><%= button_to 'Add To Favorites', favorites_path(favorite: {user_id: current_user, bookmark_id: bookmark}) %></td>
+        <td><%= button_to 'Add To Favorites', favorites_path(favorite: {user_id: current_user, bookmark_id: bookmark, tag_id: }) %></td>
         </td>
       </tr>
     <% end %>

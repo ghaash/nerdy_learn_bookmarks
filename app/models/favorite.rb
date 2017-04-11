@@ -16,4 +16,5 @@ class Favorite < ApplicationRecord
   def url
     bookmark.url
   end
+
 end

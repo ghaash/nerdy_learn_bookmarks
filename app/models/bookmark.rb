@@ -1,11 +1,16 @@
 class Bookmark < ApplicationRecord
   has_many :favorites
-  has_many :tags
+  has_many :tags, through: :favorites
   validates :name, presence: true, uniqueness: { scope: [:name], message: "Cannot have the same name" }
   validates :description, presence: true, uniqueness: { scope: [:description], message: "Cannot contain the same description" }
   validates :url, presence: true, uniqueness: { scope: [:url], message: "no duplicate url bookmarks, please!" }
 
-accepts_nested_attributes_for :tags
+  def tags_attributes=(tags_attributes)
+      tags_attributes.each do |i, tags_attributes|
+      self.tags.build(tags_attributes)
+    end
+  end
+# accepts_nested_attributes_for :tags
 
   # def bookmark_attributes=(bookmark)
   #   self.bookmark = Bookmark.find_or_create_by(description: bookmark.description)
