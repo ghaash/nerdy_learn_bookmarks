@@ -39,6 +39,7 @@ gem 'devise'
 gem 'dotenv'
 gem 'omniauth-facebook'
 gem 'rubocop', require: false
+gem 'rails_admin', '~> 1.1.1'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

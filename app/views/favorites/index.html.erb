@@ -15,6 +15,7 @@
       <tr>
         <td><%= favorite.name %></td>
         <td><%= favorite.description %></td>
+        <td><%= favorite.category %></td>
         <td><%= favorite.url %></td>
 
         <td><%= link_to 'Show', favorite %></td>
@@ -27,7 +28,7 @@
 
 <br>
 
-<%= link_to 'New Favorite', new_favorite_path %>
+<%= link_to 'new favorite', new_favorite_path %>
 <%= link_to 'bookmarks', bookmarks_path %>
 
 <%= search_form_for @q do |f| %>

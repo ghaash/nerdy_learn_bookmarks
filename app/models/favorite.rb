@@ -13,6 +13,10 @@ class Favorite < ApplicationRecord
     bookmark.description
   end
 
+  def category
+    bookmark.category
+  end
+
   def url
     bookmark.url
   end

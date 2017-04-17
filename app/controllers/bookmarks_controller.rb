@@ -6,18 +6,17 @@ class BookmarksController < ApplicationController
       @bookmarks = Bookmark.all
       @q = Bookmark.ransack(params[:q])
       @bookmarks = @q.result(distinct: true)
-      # if !params[:bookmark].blank?
-      #   @bookmarks = Bookmark.by_bookmark(params[:bookmark])
-      # elsif !params[:date].blank?
-      #   if params[:date] == "Today"
-      #     @bookmarks = Bookmark.from_today
-      #   else
-      #     @bookmarks = Bookmark.old_news
-      #   end
-      # else
-      # @bookmarks = Bookmark.all
-      # end
+      if !params[:sort].blank?
+    if params[:sort] == "Ascending"
+      @bookmarks = Bookmark.category_sort_up
+    elsif params[:sort] == "Descending"
+      @bookmarks = Bookmark.category_sort_down
     end
+ else
+   @bookmarks = Bookmark.all
+ end
+end
+
 
   def show
   end
